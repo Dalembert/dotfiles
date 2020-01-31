@@ -2,7 +2,7 @@ zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '/home/dalembert/.zshrc'
 
-autoload -Uz compinit
+autoload -Uz compinit vcs_info
 compinit
 
 HISTFILE=~/.zsh_history
@@ -50,7 +50,13 @@ GIT_EDITOR=vim
 export GIT_EDITOR
 
 NMBR_KEY=$(ssh-add -l | wc -l)
+# TODO add all ssh keys beginning with `id`
 if [[ $NMBR_KEY == 0 ]]; then
     ssh-add ~/.ssh/id_ecdsa
 fi
 
+#function zlog {
+#    vcs_info
+#    local branch...
+#    echo $vcs_info_msg_0_
+#}
