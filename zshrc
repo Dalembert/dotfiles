@@ -15,16 +15,28 @@ unsetopt beep
 
 PROMPT="%B%F{white}%c%f%b "
 
-alias ls="ls --color=auto"
-alias ll="ls --color=auto -lAhtr"
-alias l.="ls .* -d"
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
-alias .="source"
-alias ..="cd .."
-alias motd="sudo /usr/sbin/update-motd"
-alias emotd="sudo vim /etc/update-motd.d/10-todos"
+if [[ $(uname -a) =~ "^Darwin" ]]; then
+    # on an OSX system
+    unalias -a
+    alias .="source"
+    alias ..="cd .."
+    alias ls="ls -G"
+    alias grep="grep --color"
+else
+    # assume on a Linux system
+    unalias -a
+    alias .="source"
+    alias ..="cd .."
+    alias ls="ls --color=auto"
+    alias ll="ls --color=auto -lAhtr"
+    alias l.="ls -d .*"
+    alias rm="rm -i"
+    alias mv="mv -i"
+    alias cp="cp -i"
+    alias grep="grep --color"
+    alias motd="sudo /usr/sbin/update-motd"
+    alias emotd="sudo vim /etc/update-motd.d/10-todos"
+fi
 
 # git aliases
 alias glog="git log --all --graph --oneline"
