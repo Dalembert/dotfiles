@@ -1,3 +1,4 @@
+#!/bin/zsh
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '/home/dalembert/.zshrc'
@@ -12,8 +13,6 @@ SAVEHIST=5000
 setopt +o nomatch
 setopt appendhistory autocd
 unsetopt beep
-
-PROMPT="%B%F{white}%c%f%b "
 
 if [[ $(uname -a) =~ "^Darwin" ]]; then
     # on an OSX system
@@ -55,8 +54,13 @@ if [[ $NMBR_KEY == 0 ]]; then
     ssh-add ~/.ssh/id_ecdsa
 fi
 
-#function zlog {
-#    vcs_info
-#    local branch...
-#    echo $vcs_info_msg_0_
-#}
+function git_prompt {
+    vcs_info
+    echo $vcs_info_msg_0_ | grep -o "\[.*\]"
+}
+precmd_functions+=( git_prompt )
+git_prompt
+
+setopt prompt_subst
+
+PROMPT="%B%F{white}%c%f%b $git_prompt"
