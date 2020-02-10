@@ -31,9 +31,11 @@ alias glog="git log --all --graph --oneline"
 alias gbranch="git branch --list -a"
 
 ZSHRC=~/.zshrc
-VIMRC=~/.vimrc
 export ZSHRC
+VIMRC=~/.vimrc
 export VIMRC
+GIT_EDITOR=vim
+export GIT_EDITOR
 
 NMBR_KEY=$(ssh-add -l | wc -l)
 if [[ $NMBR_KEY == 0 ]]; then
