@@ -3,7 +3,7 @@
 
 # glob with `*` does expand to all files in directory
 # wrap in `(` and `)` to convert to array
-FILES=(*[^setup.zsh*])
+FILES=(*[^setup.zsh\|README.md])
 
 # array[@] return all items as seperate word,
 # array[*] would return all items as one word
