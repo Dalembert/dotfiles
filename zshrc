@@ -21,13 +21,14 @@ if [[ $(uname -a) =~ "^Darwin" ]]; then
     unalias -a
     alias .="source"
     alias ls="ls -G"
+    alias ll="ls -lG"
     alias grep="grep --color"
 else
     # assume on a Linux system
     unalias -a
     alias .="source"
     alias ls="ls --color=auto"
-    alias ll="ls --color=auto -lAhtr"
+    alias ll="ls --color=auto -l"
     alias l.="ls -d .*"
     alias rm="rm -i"
     alias mv="mv -i"
