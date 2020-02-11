@@ -10,22 +10,22 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=5000
 
-setopt +o nomatch
-setopt appendhistory autocd
+setopt appendhistory
+setopt autocd
+setopt promptsubst
 unsetopt beep
+unsetopt nomatch
 
 if [[ $(uname -a) =~ "^Darwin" ]]; then
     # on an OSX system
     unalias -a
     alias .="source"
-    alias ..="cd .."
     alias ls="ls -G"
     alias grep="grep --color"
 else
     # assume on a Linux system
     unalias -a
     alias .="source"
-    alias ..="cd .."
     alias ls="ls --color=auto"
     alias ll="ls --color=auto -lAhtr"
     alias l.="ls -d .*"
@@ -58,9 +58,6 @@ function git_prompt {
     vcs_info
     echo $vcs_info_msg_0_ | grep -o "\[.*\]"
 }
-precmd_functions+=( git_prompt )
-git_prompt
-
-setopt prompt_subst
+precmd_functions+=(git_prompt)
 
 PROMPT="%B%F{white}%c%f%b $git_prompt"
