@@ -21,7 +21,7 @@ export VIMRC
 GIT_EDITOR=vim
 export GIT_EDITOR
 
-for FILE in zsh/*; do
+for FILE in zsh/*.zsh; do
     echo "Source $FILE"
     source $FILE
 done

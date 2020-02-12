@@ -32,5 +32,5 @@ VIM_START="$HOME/.vim/pack/$USER/start"
 if [[ -a $VIM_START ]]; then
     skipping_msg $VIM_START
 else
-    git clone https://github.com/cormacrelf/vim-colors-github $VIM_START
+    git clone https://github.com/cormacrelf/vim-colors-github "$VIM_START/vim-colors-github"
 fi
