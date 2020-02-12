@@ -3,8 +3,7 @@ zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '/home/dalembert/.zshrc'
 
-autoload -Uz compinit vcs_info
-compinit
+autoload -Uz compinit vcs_info && compinit
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -12,7 +11,6 @@ SAVEHIST=5000
 
 setopt appendhistory
 setopt autocd
-setopt promptsubst
 unsetopt beep
 unsetopt nomatch
 
@@ -55,10 +53,9 @@ if [[ $NMBR_KEY == 0 ]]; then
     ssh-add ~/.ssh/id_ecdsa
 fi
 
-function git_prompt {
-    vcs_info
-    echo $vcs_info_msg_0_ | grep -o "\[.*\]"
-}
-precmd_functions+=(git_prompt)
-
-PROMPT="%B%F{white}%c%f%b $git_prompt"
+setopt promptsubst
+function precmd_vcs_info { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+PROMPT='%B%F{white}%c%f%b${vcs_info_msg_0_} '
+# only output git branch in orange
+zstyle ":vcs_info:*" formats ":%F{172}%b%f"
