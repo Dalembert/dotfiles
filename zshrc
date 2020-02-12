@@ -50,12 +50,13 @@ export GIT_EDITOR
 NMBR_KEY=$(ssh-add -l | wc -l)
 # TODO add all ssh keys beginning with `id`
 if [[ $NMBR_KEY == 0 ]]; then
-    ssh-add ~/.ssh/id_ecdsa
+    ssh-add ~/.ssh/*
 fi
 
 setopt promptsubst
 function precmd_vcs_info { vcs_info }
 precmd_functions+=( precmd_vcs_info )
+# NOTE important to put prompt in single quotes
 PROMPT='%B%F{white}%c%f%b${vcs_info_msg_0_} '
-# only output git branch in orange
+# format current git branch in orange
 zstyle ":vcs_info:*" formats ":%F{172}%b%f"
