@@ -17,8 +17,7 @@ FILES=(*[^setup.zsh^README.md])
 # array[@] return all items as seperate word,
 # array[*] would return all items as one word
 # add double quotes to avoid further parsing of filenames
-for f in "${FILES[@]}"
-do
+for f in "${FILES[@]}"; do
     if [[ -a "$HOME/.$f" ]]; then
         skipping_msg $f
     else
