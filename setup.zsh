@@ -17,12 +17,12 @@ FILES=(*[^setup.zsh^README.md])
 # array[@] return all items as seperate word,
 # array[*] would return all items as one word
 # add double quotes to avoid further parsing of filenames
-for f in "${FILES[@]}"; do
-    if [[ -a "$HOME/.$f" ]]; then
-        skipping_msg $f
+for FILE in "${FILES[@]}"; do
+    if [[ -a "$HOME/.$FILE" ]]; then
+        skipping_msg $FILE
     else
-        print "$f: Create symbolic link from $HOME/.$f to $(pwd)/$f"
-        ln -s "$(pwd)/$f" "$HOME/.$f"
+        print "$FILE: Create symbolic link from $HOME/.$FILE to $(pwd)/$FILE"
+        ln -s "$(pwd)/$FILE" "$HOME/.$FILE"
     fi
 done
 

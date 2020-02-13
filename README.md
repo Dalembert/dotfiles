@@ -1,6 +1,6 @@
-```bash
-git clone git@github.com:Dalembert/dotfiles.git
-cd dotfiles
+```zsh
+git clone https://github.com/Dalembert/dotfiles.git $HOME/dotfiles
+cd $HOME/dotfiles
 chmod u+x setup.zsh
 ./setup
 ```
