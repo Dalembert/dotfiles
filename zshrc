@@ -21,7 +21,7 @@ export VIMRC
 GIT_EDITOR=vim
 export GIT_EDITOR
 
-FILES=( /Users/ka76tal/Workspace/dotfiles/zsh/* )
+FILES=( $HOME/Projects/dotfiles/zsh/* )
 for FILE in "${FILES[@]}"; do
     source $FILE
 done
