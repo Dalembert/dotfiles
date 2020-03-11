@@ -19,5 +19,7 @@
       },
       "cssPreprocessor": "node-sass"
     }
-  }
+  },
+  "latestVersion": "4.2.2",
+  "lastChecked": 1581673030076
 }
