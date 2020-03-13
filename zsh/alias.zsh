@@ -1,4 +1,4 @@
-if [[ $(uname -a) =~ "^Darwin" ]]; then
+if [[ `uname -a` =~ "^Darwin" ]]; then
     # on an OSX system
     unalias -a
     alias .="source"
