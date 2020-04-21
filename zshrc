@@ -3,8 +3,6 @@ zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle :compinstall filename '/home/dalembert/.zshrc'
 
-autoload -Uz compinit vcs_info && compinit
-
 setopt appendhistory
 setopt autocd
 unsetopt beep
@@ -22,3 +20,5 @@ FILES=( $HOME/dotfiles/zsh/* )
 for FILE in "${FILES[@]}"; do
     source $FILE
 done
+
+autoload -Uz compinit vcs_info && compinit
