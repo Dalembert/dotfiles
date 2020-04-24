@@ -12,19 +12,19 @@
 "# Globals Settings                                                            #
 "###############################################################################
 syntax enable               " enable syntax highlighting
-filetype plugin indent on   " only use autoindent
+filetype plugin indent off  " only use autoindent
 colorscheme github          " github colorscheme
 set backspace=2             " enable common backspace behavour
 set formatoptions=rc        " r auto comment, c wrap comments using textwidth
-set number			        " enable line numbers
+set number			            " enable line numbers
 set relativenumber          " enable relative line numbers
-set expandtab		        " use spaces instead of tabs
-set shiftwidth=4	        " 1 tab = 4 spaces
+set expandtab		            " use spaces instead of tabs
+set shiftwidth=4	          " 1 tab = 4 spaces
 set tabstop=4               " indenting 1 tab = 4 spaces
 set softtabstop=4           " deleting 1 tab = 4 spaces
 set shiftround              " indent to a multiple of shiftwidth
 set cursorline              " highlight cursor's line
-set textwidth=120           " lines length = 80 chars
+set textwidth=80            " line length = 80 chars
 set colorcolumn=+1          " highlight lines longer than textwidth
 set wildignorecase          " enable case insensitive completion
 set nowrap                  " do not wrap visually long lines
