@@ -13,10 +13,6 @@ HISTSIZE=1000
 SAVEHIST=5000
 
 FILES=( $HOME/dotfiles/zsh/* )
-<<<<<<< HEAD
->>>>>>> 4895a78... Consistent naming
-=======
->>>>>>> 7c7a179... Resovled merge confilct
 for FILE in "${FILES[@]}"; do
     source $FILE
 done
