@@ -3,7 +3,11 @@
 
 # glob with `*` does expand to all files in directory
 # wrap in `(` and `)` to convert to array
+<<<<<<< HEAD
 FILES=(*[^setup.zsh\|README.md])
+=======
+FILES=(*[^setup.zsh^README.md])
+>>>>>>> 81ab246... Exclude README file from getting symlinked
 
 # array[@] return all items as seperate word,
 # array[*] would return all items as one word
