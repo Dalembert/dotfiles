@@ -33,8 +33,8 @@ set autoindent              " indent automatically with prev indent
 set nosmartindent           " disable, hence only autoindent
 set nocindent               " disable, hence only autoindent
 set mouse=nicr              " don't go in visual mode with mouse drag
-set backupcopy=yes          " if backup enabled, write to file and copy
-                            " original one
+set backupcopy=yes          " if backup enabled, write to file and copy " original one
+set t_Co=256                " makes vim colorscheme work in tmux
 "###############################################################################
 "# Mappings                                                                    #
 "###############################################################################
