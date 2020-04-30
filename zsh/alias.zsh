@@ -18,5 +18,7 @@ else
     alias motd="sudo /usr/sbin/update-motd"
     alias emotd="sudo vim /etc/update-motd.d/10-todos"
 fi
+alias gs="git status"
+alias gc="git commit"
 alias glog="git log --all --graph --oneline"
 alias gbranch="git branch --list -a"
