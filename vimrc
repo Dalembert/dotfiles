@@ -38,7 +38,6 @@ set t_Co=256                " makes vim colorscheme work in tmux
 "###############################################################################
 "# Mappings                                                                    #
 "###############################################################################
-
 " use <leader> as prefix in mappings
 let mapleader = ","
 " leave inset mode with j-k, J-k, J-K
@@ -49,45 +48,10 @@ inoremap JK <esc>
 " leave visual mode
 vnoremap JK <esc>
 
-" source vimrc
-nnoremap <leader><space> :source $MYVIMRC<cr>
 " move half page down
-nnoremap <C-J> <C-D>
-" move half page up
-nnoremap <C-K> <C-U>
-" move current line up
 nnoremap + ddkP
 " move current line down
 nnoremap - ddp
-" edit vimrc in split window
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" split window horizontally
-nnoremap <leader>s :split .<CR>
-" split window vertically
-nnoremap <leader>v :vsplit .<CR>
-" maximize current split
-nnoremap <leader>m <C-W>_
-" equalize size of all splits
-nnoremap <leader>= <C-W>=
-" increase current split
-nnoremap <leader>+ <C-W>15+
-" decrease current split
-nnoremap <leader>- <C-W>15-
-" increase current vsplit
-nnoremap <leader>a <C-W>15<
-" decrease current vsplit
-nnoremap <leader>f <C-W>15>
-" shift focus to left
-nnoremap <leader>h <C-W>h
-" shift focus to right
-nnoremap <leader>l <C-W>l
-" shift focus to down
-nnoremap <leader>j <C-W>j
-" shift focus to up
-nnoremap <leader>k <C-W>k
-" wrap word in double quotes
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-
 "###############################################################################
 "# Indentation 2 spaces                                                        #
 "###############################################################################
@@ -120,7 +84,6 @@ augroup NUMBERTOGGLE
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
-
 "###############################################################################
 "# Plugin Settings                                                             #
 "###############################################################################
