@@ -3,7 +3,7 @@
 # Create plugin directory for vim
 
 function skipping_msg {
-    echo $1 already exists, skipping
+    echo "$1 already exists, skipping"
 }
 
 # glob with `*` does expand to all files in directory
@@ -23,9 +23,9 @@ for FILE in "${FILES[@]}"; do
 done
 
 # create vim pack directory
-VIM_START="$HOME/.vim/pack/$USER/start"
+VIM_PACK="$HOME/.vim/pack/$USER/start"
 if [[ -a $VIM_START ]]; then
-    skipping_msg $VIM_START
+    skipping_msg $VIM_PACK
 else
-    git clone https://github.com/cormacrelf/vim-colors-github "$VIM_START/vim-colors-github"
+    git clone https://github.com/cormacrelf/vim-colors-github "$VIM_PACK/vim-colors-github"
 fi
