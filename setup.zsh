@@ -13,8 +13,10 @@ FILES=(*[^setup.zsh\|README.md])
 # array[@] return all items as seperate word,
 # array[*] would return all items as one word
 # add double quotes to avoid further parsing of filenames
-for FILE in "${FILES[@]}"; do
-    if [[ -a "$HOME/.$FILE" ]]; then
+for FILE in "${FILES[@]}"
+do
+    if [[ -a "$HOME/.$FILE" ]]
+    then
         skipping_msg $FILE
     else
         print "$FILE: Create symbolic link from $HOME/.$FILE to $(pwd)/$FILE"
@@ -24,8 +26,13 @@ done
 
 # create vim pack directory
 VIM_PACK="$HOME/.vim/pack/$USER/start"
-if [[ -a $VIM_START ]]; then
+if [[ ! -a $VIM_START ]]
+then
     skipping_msg $VIM_PACK
 else
     git clone https://github.com/cormacrelf/vim-colors-github "$VIM_PACK/vim-colors-github"
 fi
+
+# set git config
+git config --global user.email "dalembert@pm.me"
+git config --global user.name "Dalembert"
