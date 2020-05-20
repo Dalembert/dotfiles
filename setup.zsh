@@ -26,7 +26,7 @@ done
 
 # create vim pack directory
 VIM_PACK="$HOME/.vim/pack/$USER/start"
-if [[ ! -a $VIM_START ]]
+if [[ -a $VIM_START ]]
 then
     skipping_msg $VIM_PACK
 else
