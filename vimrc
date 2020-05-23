@@ -16,10 +16,10 @@ filetype plugin indent off  " only use autoindent
 colorscheme github          " github colorscheme
 set backspace=2             " enable common backspace behavour
 set formatoptions=rc        " r auto comment, c wrap comments using textwidth
-set number			            " enable line numbers
+set number			        " enable line numbers
 set relativenumber          " enable relative line numbers
-set expandtab		            " use spaces instead of tabs
-set shiftwidth=4	          " 1 tab = 4 spaces
+set expandtab		        " use spaces instead of tabs
+set shiftwidth=4	        " 1 tab = 4 spaces
 set tabstop=4               " indenting 1 tab = 4 spaces
 set softtabstop=4           " deleting 1 tab = 4 spaces
 set shiftround              " indent to a multiple of shiftwidth
@@ -63,6 +63,7 @@ augroup TWO
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType markdown   setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType scss       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType vue        setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType yaml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
