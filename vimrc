@@ -67,6 +67,10 @@ augroup TWO
     autocmd FileType vue        setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType yaml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
+augroup TOTYPESCRIPT
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx setlocal syntax=typescript sw=2 ts=2 sts=2
+augroup END
 "###############################################################################
 "# Whitespace                                                                  #
 "###############################################################################
