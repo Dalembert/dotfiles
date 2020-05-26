@@ -94,17 +94,7 @@ augroup END
 "###############################################################################
 " - EMMET
 " key to trigger emmet completion
-"let g:user_emmet_leader_key = '<C-Z>'
-" - EDITORCONFIG
-" print editorconfig messages
-"let g:EditorConfig_verbose = 1
-" - ISORT
-" key to trigger isort sorting
-"let g:vim_isort_map = '<C-I>'
-" use latest version of python3 to call isort
-"let g:vim_isort_python_version = 'python3'
-
-
+let g:user_emmet_leader_key = '<C-Z>'
 "###############################################################################
 "# OSX                                                                         #
 "###############################################################################

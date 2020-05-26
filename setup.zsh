@@ -31,6 +31,7 @@ then
     skipping_msg $VIM_PACK
 else
     git clone https://github.com/cormacrelf/vim-colors-github "$VIM_PACK/vim-colors-github"
+    git clone https://github.com/mattn/emmet-vim "$VIM_PACK/vim-emmet"
 fi
 
 # set git config
