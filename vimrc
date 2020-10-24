@@ -121,3 +121,49 @@ if has("autocmd")
     \ endif
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=80
+set colorcolumn=+1
+set number
+set autoindent
+
+inoremap jk <esc>
+
+highlight TrailingWhitespace ctermbg=lightgreen guibg=lightgreen
+augroup WHITESPACE
+    autocmd!
+    autocmd BufWrite * match TrailingWhitespace /\s\+\%#\@<!$/
+augroup END
+
+augroup NUMBERTOGGLE
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+augroup TW_WIDE
+    autocmd!
+    autocmd FileType python setlocal textwidth=120
+augroup END
+
+augroup INDENT_SLIM
+    autocmd!
+    autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
+augroup CURSOR
+    autocmd!
+    autocmd! VimEnter,InsertLeave *
+        \ silent execute '!echo -ne "\e[1 q"' | redraw!
+    autocmd! InsertEnter,InsertChange *
+        \ if v:insertmode == 'i' |
+        \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+        \ elseif v:insertmode == 'r' |
+        \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+        \ endif
+    autocmd! VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+augroup END
+
